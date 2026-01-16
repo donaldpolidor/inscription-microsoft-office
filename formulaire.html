@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Formation Microsoft Office</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-common">
+            <div class="office-logos">
+                <img src="images/windows.png" alt="Microsoft" class="office-logo" title="Windows">
+                <img src="images/word.png" alt="Word" class="office-logo" title="Word">
+                <img src="images/excel.png" alt="Excel" class="office-logo" title="Excel">
+                <img src="images/powerpoint.png" alt="PowerPoint" class="office-logo" title="PowerPoint">
+                <img src="images/access.png" alt="Access" class="office-logo" title="Access">
+                <img src="images/outlook.png" alt="Outlook" class="office-logo" title="Outlook">
+            </div>
+            <h1>Formulaire d'Inscription</h1>
+            <p class="subtitle">Formation Microsoft Office en ligne</p>
+            <p class="subtitle">Inscription ouverte</p>
+        </div>
+
+        <main class="form-container conditions-container">
+            <form id="registrationForm">
+                <!-- Section 1: Informations personnelles -->
+                <div class="form-section fade-in">
+                    <h2><i class="fas fa-user"></i> 1. Informations personnelles</h2>
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                        <div class="error-message" id="nom-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                        <div class="error-message" id="prenom-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="text" id="telephone" name="telephone">
+                        <div class="error-message" id="telephone-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Âge *</label>
+                        <input type="number" id="age" name="age" min="16" max="80" required>
+                        <div class="error-message" id="age-error"></div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Situation actuelle -->
+                <div class="form-section fade-in">
+                    <h2><i class="fas fa-briefcase"></i> 2. Situation actuelle *</h2>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="situation1" name="situation" value="salarie" required>
+                            <label for="situation1"><strong>Salarié en poste</strong> souhaitant améliorer ses compétences bureautiques</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="situation2" name="situation" value="etudiant">
+                            <label for="situation2"><strong>Étudiant</strong> souhaitant maîtriser les outils bureautiques</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="situation3" name="situation" value="debutant">
+                            <label for="situation3"><strong>Débutant / Demandeur d'emploi</strong></label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="situation4" name="situation" value="entrepreneur">
+                            <label for="situation4"><strong>Entrepreneur / Indépendant</strong></label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="situation5" name="situation" value="retraite">
+                            <label for="situation5"><strong>Retraité / En reconversion</strong></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Applications Office -->
+                <div class="form-section fade-in">
+                    <h2><i class="fas fa-laptop"></i> 3. Applications Microsoft Office ciblées *</h2>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="word" name="applications" value="word">
+                            <label for="word"><i class="fas fa-file-word word-color"></i> <strong>Word</strong> - Traitement de texte</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="excel" name="applications" value="excel">
+                            <label for="excel"><i class="fas fa-file-excel excel-color"></i> <strong>Excel</strong> - Tableurs et analyses</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="powerpoint" name="applications" value="powerpoint">
+                            <label for="powerpoint"><i class="fas fa-file-powerpoint powerpoint-color"></i> <strong>PowerPoint</strong> - Présentations</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="access" name="applications" value="access">
+                            <label for="access"><i class="fas fa-database access-color"></i> <strong>Access</strong> - Base de données</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="outlook" name="applications" value="outlook">
+                            <label for="outlook"><i class="fas fa-envelope outlook-color"></i> <strong>Outlook</strong> - Email et calendrier</label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="applications-error"></div>
+                </div>
+
+                <!-- Section 4: Objectifs -->
+                <div class="form-section fade-in">
+                    <h2><i class="fas fa-bullseye"></i> 4. Vos objectifs</h2>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="objectif1" name="objectifs" value="certification">
+                            <label for="objectif1">Connaitre les outils en informatique bureautique</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="objectif2" name="objectifs" value="efficacite">
+                            <label for="objectif2">Améliorer mon efficacité au travail</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="objectif3" name="objectifs" value="cv">
+                            <label for="objectif3">Renforcer mon CV</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="objectif4" name="objectifs" value="automatisation">
+                            <label for="objectif4">Automatiser des tâches répétitives</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="objectif5" name="objectifs" value="documents">
+                            <label for="objectif5">Créer des documents professionnels</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5: Informations complémentaires -->
+                <div class="form-section fade-in">
+                    <h2><i class="fas fa-info-circle"></i> 5. Informations complémentaires</h2>
+                    <div class="form-group">
+                        <label>Comment avez-vous connu notre formation ?</label>
+                        <select id="decouverte" name="decouverte">
+                            <option value="">-- Sélectionnez une option --</option>
+                            <option value="google">Recherche Google</option>
+                            <option value="reseaux">Réseaux sociaux</option>
+                            <option value="recommandation">Recommandation</option>
+                            <option value="email">Email marketing</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="form-buttons">
+                    <button type="button" id="resetBtn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Réinitialiser
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Soumettre l'inscription
+                    </button>
+                </div>
+            </form>
+        </main>
+
+        <!-- Pied de page identique à termes.html -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-block">
+                    <h4><i class="fas fa-envelope"></i> Contact</h4>
+                    <p>donaldpolidor30@gmail.com</p>
+                </div>
+                <div class="footer-block">
+                    <h4><i class="fas fa-phone"></i> Téléphone</h4>
+                    <p>+509 4428 7832<br>+509 3210 3217</p>
+                </div>
+                <div class="footer-block">
+                    <h4><i class="fas fa-clock"></i> Horaires</h4>
+                    <p>Lundi – Samedi<br>8h – 21h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 – D.Graffiti | Formation Microsoft Office | Tous droits réservés
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+
+    
+</body>
+</html>

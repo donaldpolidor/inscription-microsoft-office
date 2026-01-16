@@ -1,0 +1,141 @@
+/* =====================
+   VARIABLES GLOBALES
+===================== */
+:root {
+    --primary: #0078d4;
+    --primary-dark: #005a9e;
+    --primary-darker: #004578;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+    --gray-light: #f5f7fa;
+    --gray: #e0e0e0;
+    --text-dark: #333;
+    --radius: 16px;
+    --shadow-soft: 0 10px 30px rgba(0,0,0,.12);
+    --shadow-hover: 0 18px 40px rgba(0,0,0,.18);
+}
+
+/* =====================
+   RESET & BASE
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+    max-width: 920px;
+    margin: auto;
+}
+
+/* =====================
+   HEADER COMMUN
+===================== */
+.header-common {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    padding: 45px 35px;
+    text-align: center;
+    border-radius: var(--radius) var(--radius) 0 0;
+    box-shadow: var(--shadow-soft);
+}
+
+.header-common h1 {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.header-common .subtitle {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.header-common .date {
+    margin-top: 6px;
+    font-size: .9rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* =====================
+   LOGOS OFFICE COMMUN
+===================== */
+.office-logos {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.office-logo {
+    height: 55px;
+    border-radius: 12px;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.office-logo:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =====================
+   FOOTER COMMUN
+===================== */
+.site-footer {
+    margin-top: 40px;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 35px;
+    text-align: center;
+}
+
+.footer-block h4 {
+    color: var(--primary);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.footer-block p {
+    color: #444;
+    font-size: .95rem;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    background: var(--gray-light);
+    padding: 15px;
+    text-align: center;
+    font-size: .85rem;
+    color: #666;
+}
+
+/* FOOTER RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 25px;
+    }
+}
