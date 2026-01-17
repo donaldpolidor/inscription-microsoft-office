@@ -2,33 +2,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const form = document.getElementById('registrationForm');
 
-    // Création d'un élément pour le message
+    // Section 3 : checkboxes applications
+    const officeCheckboxes = document.querySelectorAll(
+        'input[name="applications"]'
+    );
+
+    // Options de formation
+    const optionRadios = document.querySelectorAll(
+        'input[name="formationOption"]'
+    );
+
+    // Gestion Option 1 / Option 2
+    optionRadios.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.value === 'option2') {
+                officeCheckboxes.forEach(cb => {
+                    cb.checked = true;
+                    cb.disabled = true;
+                });
+            } else {
+                officeCheckboxes.forEach(cb => {
+                    cb.checked = false;
+                    cb.disabled = false;
+                });
+            }
+        });
+    });
+
+    // Message de succès
     const successMessage = document.createElement('p');
     successMessage.style.color = 'green';
     successMessage.style.fontWeight = 'bold';
     successMessage.style.marginTop = '20px';
 
-    form.parentNode.insertBefore(successMessage, form.nextSibling); // ajoute après le formulaire
+    form.parentNode.insertBefore(successMessage, form.nextSibling);
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault(); // empêche le rechargement
+    // Soumission du formulaire
+    form.addEventListener('submit', function () {
 
-        // Vérification simple : on peut garder validation si nécessaire
-        let valid = true;
-        const nom = document.getElementById('nom').value.trim();
-        const prenom = document.getElementById('prenom').value.trim();
-        const email = document.getElementById('email').value.trim();
-        if (nom.length < 2 || prenom.length < 2 || email.length < 5) {
-            alert('Veuillez remplir correctement le formulaire');
-            valid = false;
-        }
+        successMessage.textContent =
+            'Inscription réussie ! Redirection en cours...';
 
-        if (!valid) return;
+        // Désactiver le bouton submit
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
 
-        // Afficher le message de succès
-        successMessage.textContent = 'Inscription réussie !';
-
-        // Réinitialiser le formulaire
-        form.reset();
+        // Redirection après 4 secondes
+        setTimeout(() => {
+            window.location.href = 'termes.html';
+        }, 4000);
     });
 });
